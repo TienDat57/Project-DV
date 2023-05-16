@@ -119,8 +119,8 @@ def Price_Correlation_Question():
     ivn_floor = inverse_input.text_input("Số tầng", value=int(n_room))
 
     predictions = model.predict([[n_room, n_floor]])
-    test_input.markdown(f"Giá sẽ khoảng `{round(predictions[0][0], 2)}` triệu/$m^2$")
+    test_input.markdown(f"Giá sẽ khoảng `{round(predictions[0][0], 2)}` triệu")
 
     predictions = model.predict([[ivn_room, ivn_floor]])
-    inverse_input.markdown(f"Giá sẽ khoảng `{round(predictions[0][0], 2)}` triệu/$m^2$")
+    inverse_input.markdown(f"Giá sẽ khoảng `{round(predictions[0][0], 2)}` triệu")
 

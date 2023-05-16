@@ -9,27 +9,27 @@ def get_questions():
     questions = [
         {
             "component": House_Type_Question,
-            "name": "🏚 House Type",
+            "name": "🏚 Q1 House Type",
             "icon": "front"
         },
         {
             "component": Price_Correlation_Question,
-            "name": "💰 Price correlation",
+            "name": "💰 Q2 Price correlation",
             "icon": "cash-coin"
         },
         {
             "component": Price_Fluctuation_Question,
-            "name": "📉 Price Fluctuation",
+            "name": "📉 Q3 Price Fluctuation",
             "icon": "line-chart"
         },
         {
             "component": District_Information_Question,
-            "name": "🌆 District Information",
+            "name": "🌆 Q4 District Information",
             "icon": "home-night"
         },
         {
             "component": houseRoomsCorrelation,
-            "name": "🌆 houseRoomsCorrelation",
+            "name": "🤖 Q5 House Rooms Correlation",
             "icon": "cash-coin"
         }
     ]

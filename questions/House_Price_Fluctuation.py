@@ -9,8 +9,6 @@ def Price_Fluctuation_Question():
 
   st.header("Biến động giá nhà")
 
-  #st.subheader("1. Biến động giá nhà")
-
   df_fl = df.copy()
   df_fl['date'] = pd.to_datetime(df_fl['date']).dt.date
   df_fl['month'] = pd.DatetimeIndex(df_fl['date']).month
