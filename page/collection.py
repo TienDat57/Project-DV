@@ -19,8 +19,8 @@ def app():
 
    st.title("Data Cleaning and Preparation")
    st.markdown('### **Reading the data**')
-   st.code('''HCMHouseRent = pd.read_csv('../data/HCMHouseRent.csv')''', language='python')
-   HCMHouseRent = pd.read_csv('./data/HCMHouseRent.csv')
+   st.code('''HCMHouseRent = pd.read_csv('../data/processed/VN_housing_dataset.csv')''', language='python')
+   HCMHouseRent = pd.read_csv('./data/processed/VN_housing_dataset.csv')
    st.dataframe(HCMHouseRent)
    st.code('''HCMHouseRent.info()''', language='python')
    st.write(''' Index| Column|     Non-Null Count|  Dtype''')

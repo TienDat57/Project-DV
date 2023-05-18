@@ -84,10 +84,6 @@ def District_Information_Question():
         st.markdown("Đánh giá: Khu vực phát triển, là trung tâm tập trung đông dân cư.")
         xungDang.append(str(data[data["district"] == each].iloc[0]["district"]))
 
-
-    #trungBinhQuanTable["Price"] = pd.DataFrame(pd.cut(x = trungBinhQuanTable["Giá trung bình quận"], bins=[15, 50, 85, 120, 155, 190, 225, 260]))
-    #trungBinhQuanTable["Price_label"] = le.fit_transform(trungBinhQuanTable["Price"])
-    # trungBinhQuanTable = trungBinhQuanTable[['Giá trung bình quận']]
     quanGiaSquares = pd.DataFrame(data[["district"]])
     kmeanChart = pd.DataFrame(data[["squares","price"]])
     st.write(kmeanChart)

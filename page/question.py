@@ -6,7 +6,7 @@ import pandas as pd
 
 from components import question_item
 
-df_house_rent = pd.read_csv('./data/HCMHouseRentPreprocessing.csv')
+df_house_rent = pd.read_csv("./data/processed/VN_housing_dataset.csv")
 
 def selected_feture():
    selected_year = st.selectbox('Year', list(reversed(range(2015, 2022))))

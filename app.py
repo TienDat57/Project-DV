@@ -1,40 +1,28 @@
 import streamlit as st
+from streamlit_option_menu import option_menu
+from screens.index import get_routes
 
-from components import side_bar
-from pages import home, collection, explorations, question, reflection
-
-# set up config page
 st.set_page_config(
-   page_title="House Rent", 
-   layout="wide",
-   initial_sidebar_state="expanded",
+    layout="wide",
 )
 
-apps = [
-    {"page": home.app, "title": "Home", "icon": "house"},
-    {"page": collection.app, "title": "Data Collection", "icon": "map"},
-    {"page": explorations.app, "title": "Data Explorations", "icon": "graph-up-arrow"},
-    {"page": question.app, "title": "Question & Insight", "icon": "patch-question"},
-    {"page": reflection.app, "title": "Reflection", "icon": "box-seam"}
-]
+routes = get_routes()
 
-titles = [app["title"] for app in apps]
-titles_lower = [title.lower() for title in titles]
-icons = [app["icon"] for app in apps]
-
-# Get index of page when select 
-params = st.experimental_get_query_params()
-if "page" in params:
-    default_index = int(titles_lower.index(params["page"][0].lower()))
-else:
-    default_index = 0
-
-# Custom side bar
 with st.sidebar:
-    selected = side_bar.make_side_bar(titles, icons, default_index)
+    global selected_screen
+    
+    selected_screen = option_menu("Data Science", routes['name'], 
+        icons=routes['icon'], menu_icon="book")
+    
+    # selected_screen = on_hover_tabs(tabName=routes['name'], 
+    #                      iconName=routes['icon'], default_choice=0)
 
-# Display the selected page
-for app in apps:
-    if app["title"] == selected:
-        app["page"]()
-        break
+routes['component'][selected_screen]()
+
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
