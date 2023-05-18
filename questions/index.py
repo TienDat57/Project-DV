@@ -3,6 +3,9 @@ from questions.Price_Correlation import Price_Correlation_Question
 from questions.House_Price_Fluctuation import Price_Fluctuation_Question
 from questions.District_Information import District_Information_Question
 from questions.house_rooms_correlation import houseRoomsCorrelation
+from questions.More_House_Less_Price import More_House_Less_Price_Question
+from questions.Regression import Regression_Question
+from questions.Price_followed_by_District import Price_followed_by_district_Question
 from utils.index import get_hash
 
 def get_questions():
@@ -31,7 +34,21 @@ def get_questions():
             "component": houseRoomsCorrelation,
             "name": "🤖 Q5 House Rooms Correlation",
             "icon": "cash-coin"
-        }
-    ]
+        },
+        {
+            "component": More_House_Less_Price_Question,
+            "name": "🏚 Q6 More House Less Price",
+            "icon": "front"
+        },
+        {    
+            "component": Regression_Question,
+            "name": "📈 Q7 Regression",
+            "icon": "line-chart"
+        },
+        {
+            "component": Price_followed_by_district_Question,
+            "name": "📈 Q8 Price followed by district",
+            "icon": "line-chart"
+        }]
 
     return get_hash(questions)
