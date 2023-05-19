@@ -10,7 +10,7 @@ import statsmodels.api as sm
 
 def Regression():
     df = get_dataset().copy()
-    
+    st.header("Regression")
     st.write(df.head())
     st.markdown('---')
     
