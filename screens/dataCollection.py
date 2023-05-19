@@ -12,11 +12,10 @@ def Collection_Screen():
 >- We will use the dataset that has already been collected and is attached as "VN_housing_dataset.csv" in this assignment. This is information about **Vietnam Housing Dataset (Hanoi)**. This data is fetched from [here](https://www.kaggle.com/datasets/ladcva/vietnam-housing-dataset-hanoi?select=VN_housing_dataset.csv&fbclid=IwAR1rf0QHrY45ycc8gA_GeFE9NuRlh41_RIkrNbSB5-0t_vYw79L6PVljvGs).''')
     
     st.markdown('### ***Do authors of this data allow you to use like this?***')
-    st.markdown('''>- Data files LE ANH DUC Authors
-        >- Data files VĂN VIẾT HIẾU ANH Authors
-        >- Published on 2021
-        >- License: CC BY-NC-SA 4.0'''
-    )
+    st.markdown('>- Data files LE ANH DUC Authors')
+    st.markdown('>- Data files VĂN VIẾT HIẾU ANH Authors')
+    st.markdown('>- Published on 2021')
+    st.markdown('>- License: CC BY-NC-SA 4.0')
     st.markdown('### ***How did authors collect data?***')
     st.markdown('>- The data is collected from the State Governments.')
     st.markdown('---')
