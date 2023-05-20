@@ -18,6 +18,8 @@ def House_Type_Question():
     st.subheader("1. Cái nhìn sơ lược về số lượng nhà ở của các quận, huyện")
     table_1, chart_1 = st.columns([1,4])
     fig = px.pie(df.groupby("district").count().reset_index(),values="address",  names="district", title='Số lượng nhà ở của các quận, huyện')
+    fig.update_traces(textposition='inside')
+    fig.update_layout(uniformtext_minsize=12, uniformtext_mode='hide')
     chart_1.plotly_chart(fig)
 
 
@@ -66,7 +68,7 @@ def House_Type_Question():
     grouped_df = grouped_df.loc[grouped_df["Tổng"] > THRESHOLD]
 
     # Chart 1
-    best_chart, best_table = st.columns(2)
+    best_chart, best_table = st.columns([2,1])
     grouped_df["Tỉ lệ nhà hẻm (%)"] = grouped_df["Nhà ngõ, hẻm"] / grouped_df["Tổng"] * 100
     grouped_df["Tỉ lệ nhà hẻm (%)"] = grouped_df["Tỉ lệ nhà hẻm (%)"].apply(lambda x: x)
     grouped_df = grouped_df.sort_values(by="Tỉ lệ nhà hẻm (%)", ascending=False)
@@ -79,7 +81,7 @@ def House_Type_Question():
 
 
     # Chart 2
-    best_chart, best_table = st.columns(2)
+    best_chart, best_table = st.columns([2,1])
     grouped_df["Tỉ lệ nhà mặt phố, mặt tiền (%)"] = grouped_df["Nhà mặt phố, mặt tiền"] / grouped_df["Tổng"] * 100  
     grouped_df["Tỉ lệ nhà mặt phố, mặt tiền (%)"] = grouped_df["Tỉ lệ nhà mặt phố, mặt tiền (%)"].apply(lambda x: x)
     grouped_df = grouped_df.sort_values(by="Tỉ lệ nhà mặt phố, mặt tiền (%)", ascending=False)
@@ -93,7 +95,7 @@ def House_Type_Question():
 
 
     # Chart 3
-    best_chart, best_table = st.columns(2)
+    best_chart, best_table = st.columns([2,1])
     grouped_df["Tỉ lệ biệt thự (%)"] = grouped_df["Nhà biệt thự"] / grouped_df["Tổng"] * 100
     grouped_df["Tỉ lệ biệt thự (%)"] = grouped_df["Tỉ lệ biệt thự (%)"].apply(lambda x: x)
     grouped_df = grouped_df.sort_values(by="Tỉ lệ biệt thự (%)", ascending=False)
